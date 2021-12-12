@@ -1,0 +1,108 @@
+#include <iostream>
+#include <cstdlib>
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+using namespace std;
+
+void animasi(char kata[100]){
+		
+		for (int i= 0; i < strlen(kata);i++){
+			cout<<kata[i];
+			
+			Sleep(100);
+			}
+		}
+		
+	
+int main()
+{	
+ 	system("color B");
+	animasi("Selamat datang di game tebak angka!\n");
+	cout<<"Loading game.";
+	Sleep(1000);
+	system("cls");
+	
+	cout<<"Selamat datang di game tebak angka!\n";
+	cout<<"Loading game..";
+	Sleep(2000);
+	system("cls");
+	
+	cout<<"Selamat datang di game tebak angka!\n";
+	cout<<"Loading game...";
+	Sleep(2000);
+	system("cls");
+	
+	//int lvl1[5] = {1,2,3,4,5};
+	int tebak, lvl1, lvl2, lvl3;
+	char pilihan;
+	srand(time(NULL));
+	//cout<<lvl1[rand()%5]<<endl;
+	lvl1 = rand()%5 + 1;
+	lvl2 = rand()%10 + 1;
+k:	for(int i=2; i>=0; i--)
+	{	cout << "tebaklah angka mulai dari 1-5."<<endl;
+		cout << "kesempatan anda untuk menebak sebanyak "<<i+1<<" kali"<<endl;
+		cout<<"masukkan angka tebakan anda : ";
+		cin>>tebak;
+		if(lvl1==tebak)
+		{
+			animasi("tebakanmu benar");
+			cout<<"\nangkanya adalah : "<<lvl1<<endl;
+			break;
+			goto l;
+			} 
+			
+		else
+			{
+					animasi("tebakanmu salah");
+					cout<<endl;
+					if(i==0)
+					goto m;
+					
+				//cout<<"tebakanmu salah\nangkanya adalah : "<<lvl1<<endl;
+			}
+		
+		
+			
+		
+	}
+l:	cout<<"apakah kamu ingin lanjut ke level 2?y/n : ";
+		cin>>pilihan;
+		if(pilihan=='y'|| pilihan=='Y')
+		{
+			for(int i=2; i>=0; i--)
+	{	
+		cout << "tebaklah angka mulai dari 1-10."<<endl;
+		cout << "kesempatan anda untuk menebak sebanyak "<<i+1<<" kali"<<endl;
+		cout<<"masukkan angka tebakan anda : ";
+		cin>>tebak;
+		if(lvl2==tebak)
+		{   animasi("tebakanmu benar");
+			cout<<"\nangkanya adalah : "<<lvl2<<endl;
+			break;
+			
+			} 
+			
+		else
+			{
+				animasi("tebakanmu salah");
+				cout<<endl;
+			}
+	}
+		}
+m:		cout<<"apakah anda ingin bermain lagi? (y/n)"<<endl;
+			char x;
+			cin>>x;
+			if(x=='y'|| x=='Y'){
+			system("cls");
+			goto k;
+		}
+		else {
+			
+		}
+		
+	
+	return 0;
+}
